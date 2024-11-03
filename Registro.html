@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <link href="css/Estilo_Registro.css" rel="stylesheet" type="text/css">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Regístrate</h1>
+        <form action="/register" method="post">
+            <div class="input-field">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+            </div>
+            <div class="input-field">
+                <select name="tipo" required>
+                    <option value="" disabled selected>Selecciona tipo</option>
+                    <option value="Docente">Docente</option>
+                    <option value="Alumno">Alumno</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <input type="text" name="apellido" placeholder="Apellido" required>
+            </div>
+            <div class="input-field">
+                <input type="text" name="correo" placeholder="Matricula" required>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Contraseña" required autocomplete="off">
+            </div>
+            <button type="submit" class="btn-login">Registrarme</button><br><br>
+            <a href="../Proyecto/Login.html">Ir a Login de Alumno</a>
+            <br><br><br><br>
+            
+        </form>
+    </div>
+</body>
+</html>

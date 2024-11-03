@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/Estilo_Alumno.css" rel="stylesheet" type="text/css">
+    <title>Solicitud de Materiales</title>
+    <style>
+        /* Estilos globales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: -webkit-fill-available;
+            color: #333;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%; /* Cambiar a 100% para ocupar toda la página */
+            max-width: 900px; /* Limitar el ancho máximo */
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .btn-login {
+            background-color: #007bff;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-add-utensilio {
+            background-color: #28a745;
+            border: none;
+            padding: 8px;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-add-utensilio:hover {
+            background-color: #218838;
+        }
+
+        .utensilio {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .utensilio label {
+            font-weight: normal;
+            color: #555;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Solicitud de Materiales</h1>
+        <form id="utensil-form">
+            <table>
+                <tr>
+                    <th colspan="2">Datos del Solicitante</th>
+                </tr>
+                <tr>
+                    <td><label for="profesor">Nombre del Profesor:</label></td>
+                    <td><input type="text" id="profesor" name="profesor" required></td>
+                </tr>
+                <tr>
+                    <td><label for="materia">Materia:</label></td>
+                    <td><input type="text" id="materia" name="materia" required></td>
+                </tr>
+                <tr>
+                    <td><label for="grupo">Grupo:</label></td>
+                    <td><input type="text" id="grupo" name="grupo" required></td>
+                </tr>
+                <tr>
+                    <td><label for="carrera">Carrera:</label></td>
+                    <td><input type="text" id="carrera" name="carrera" required></td>
+                </tr>
+                <tr>
+                    <td><label for="laboratorio">Laboratorio:</label></td>
+                    <td><input type="text" id="laboratorio" name="laboratorio" required></td>
+                </tr>
+                <tr>
+                    <td><label for="turno">Turno:</label></td>
+                    <td><input type="text" id="turno" name="turno" required></td>
+                </tr>
+                <tr>
+                    <td><label for="nombre_practica">Nombre de la Práctica:</label></td>
+                    <td><input type="text" id="nombre_practica" name="nombre_practica" required></td>
+                </tr>
+                <tr>
+                    <td><label for="num_practica">No. de Práctica:</label></td>
+                    <td><input type="text" id="num_practica" name="num_practica" required></td>
+                </tr>
+                <tr>
+                    <td><label for="fecha_solicitud">Fecha de Solicitud:</label></td>
+                    <td><input type="date" id="fecha_solicitud" name="fecha_solicitud" required></td>
+                </tr>
+                <tr>
+                    <td><label for="fecha_practica">Fecha de Práctica:</label></td>
+                    <td><input type="date" id="fecha_practica" name="fecha_practica" required></td>
+                </tr>
+            </table>
+
+            <h2>Utensilios Solicitados</h2>
+            <div id="utensilios">
+                <div class="utensilio">
+                    <label for="cantidad_1">Cantidad:</label>
+                    <input type="number" id="cantidad_1" name="cantidad_1" required>
+
+                    <label for="unidad_1">Unidad:</label>
+                    <input type="text" id="unidad_1" name="unidad_1" required>
+
+                    <label for="nombre_utensilio_1">Utensilio:</label>
+                    <input type="text" id="nombre_utensilio_1" name="nombre_utensilio_1" required>
+                </div>
+            </div>
+            <button type="button" class="btn-add-utensilio" onclick="agregarUtensilio()">Agregar otro utensilio</button>
+
+            <input type="submit" class="btn-login" value="Enviar">
+        </form>
+    </div>
+
+    <script>
+        let utensilioCount = 1;
+
+        function agregarUtensilio() {
+            utensilioCount++;
+            const utensiliosDiv = document.getElementById('utensilios');
+            const newUtensilioDiv = document.createElement('div');
+            newUtensilioDiv.classList.add('utensilio');
+            newUtensilioDiv.innerHTML = `
+                <label for="cantidad_${utensilioCount}">Cantidad:</label>
+                <input type="number" id="cantidad_${utensilioCount}" name="cantidad_${utensilioCount}" required>
+
+                <label for="unidad_${utensilioCount}">Unidad:</label>
+                <input type="text" id="unidad_${utensilioCount}" name="unidad_${utensilioCount}" required>
+
+                <label for="nombre_utensilio_${utensilioCount}">Utensilio:</label>
+                <input type="text" id="nombre_utensilio_${utensilioCount}" name="nombre_utensilio_${utensilioCount}" required>
+            `;
+            utensiliosDiv.appendChild(newUtensilioDiv);
+        }
+    </script>
+</body>
+</html>
